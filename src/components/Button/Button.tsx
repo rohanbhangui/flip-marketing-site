@@ -16,8 +16,12 @@ const ButtonStyles = css`
   border-radius: 5rem;
   color: white;
   font-size: 1rem;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;
   display: inline-block;
+
+  @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+    padding: 1rem 2rem;
+  }
 
   &.primary {
     background: ${({ theme }) => theme.colors.yellow};
@@ -39,7 +43,7 @@ const ButtonStyles = css`
 
   &.secondary-alt {
     background: transparent;
-    border: white;
+    border: 2px solid white;
     color: white;
   }
 
@@ -52,6 +56,10 @@ const ButtonStyles = css`
   &:not(.link):active {
     position: relative;
     top: 1px;
+  }
+
+  i {
+    margin-right: 0.5rem;
   }
 `
 
