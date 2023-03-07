@@ -5,7 +5,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Flip from '@/assets/img/hero-flip.svg'
 import Curl from '@/assets/img/hero-curl.svg'
-import { smallDesktop } from '@/assets/styles/themeConfig'
+import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -30,6 +30,14 @@ const Hero = styled.section`
     padding-top: 5rem;
   }
 
+  @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+    max-width: ${desktop}px;
+  }
+
+  @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+    max-width: ${desktopFHD}px;
+  }
+
   .title {
     text-align: center;
     font-family: ${({ theme }) => theme.fonts.secondary};
@@ -39,16 +47,25 @@ const Hero = styled.section`
     font-size: min(10vw, 40rem);
 
     @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
-      font-size: min(8.2vw, 40rem);
+      font-size: min(7.8vw, 40rem);
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+      font-size: 12rem;
     }
 
     > * {
       font-family: ${({ theme }) => theme.fonts.secondary};
+      vertical-align: middle;
     }
 
     .img-container {
       display: inline-block;
-      height: min(7vw, 15rem);
+      height: min(8vw, 15rem);
+
+      @media ${({ theme }) => theme.mediaQuery.smallPhone} {
+        height: min(7vw, 12rem);
+      }
 
       img {
         height: 100%;

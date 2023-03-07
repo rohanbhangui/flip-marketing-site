@@ -2,7 +2,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import Logo from '@/assets/img/logo.svg'
 import Button from '../Button'
-import { smallDesktop } from '@/assets/styles/themeConfig'
+import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
 import { useState } from 'react'
 
 const Container = styled.header`
@@ -12,6 +12,14 @@ const Container = styled.header`
   max-width: ${smallDesktop}px;
   margin: 0 auto;
   width: 100%;
+
+  @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+    max-width: ${desktop}px;
+  }
+
+  @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+    max-width: ${desktopFHD}px;
+  }
 
   .left {
     display: flex;
