@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 type ButtonType = {
   href?: string
   label: string | ReactNode
-  type: 'primary' | 'secondary' | 'primary-alt' | 'secondary-alt'
+  type?: 'primary' | 'secondary' | 'primary-alt' | 'secondary-alt' | 'link'
   children?: ReactNode
   className?: string
 }
@@ -14,6 +14,45 @@ const ButtonStyles = css`
   border: none;
   background: none;
   border-radius: 5rem;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+
+  &.primary {
+    background: ${({ theme }) => theme.colors.yellow};
+    border: 2px solid ${({ theme }) => theme.colors.yellow};
+    color: ${({ theme }) => theme.colors.background};
+  }
+
+  &.primary-alt {
+    background: transparent;
+    border: 2px solid ${({ theme }) => theme.colors.yellow};
+    color: white;
+  }
+
+  &.secondary {
+    background: white;
+    border: white;
+    color: ${({ theme }) => theme.colors.background};
+  }
+
+  &.secondary-alt {
+    background: transparent;
+    border: white;
+    color: white;
+  }
+
+  &.link {
+    background: transparent;
+    border: none;
+    color: white;
+  }
+
+  &:not(.link):active {
+    position: relative;
+    top: 1px;
+  }
 `
 
 const ClickButton = styled.button<
@@ -33,7 +72,7 @@ const LinkButton = styled(Link)<
 `
 
 const Button = (props: ButtonType) => {
-  const { href, label, type, className, ...rest } = props
+  const { href, label, type = 'primary', className, ...rest } = props
   if (href) {
     return (
       <LinkButton className={`${className} ${type}`} href={href} {...rest}>
