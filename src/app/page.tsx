@@ -44,7 +44,6 @@ const Hero = styled.section`
 
     > * {
       font-family: ${({ theme }) => theme.fonts.secondary};
-      vertical-align: middle;
     }
 
     .img-container {
