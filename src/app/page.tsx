@@ -9,6 +9,18 @@ import GreenCircleGrid from '@/assets/img/light-green-circle-grid.svg'
 import MottoImage from '@/assets/img/motto-image.png'
 import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
 import Button from '@/components/Button'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCoverflow, Pagination } from 'swiper'
+
+import Slide1 from '@/assets/img/slide-1.png'
+import Slide2 from '@/assets/img/slide-2.png'
+import Slide3 from '@/assets/img/slide-3.png'
+
+// Import Swiper styles
+import 'swiper/swiper.min.css'
+import 'swiper/css/effect-creative'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -188,6 +200,70 @@ const Motto = styled.section`
   }
 `
 
+const OurWork = styled.section`
+  margin-top: 4rem;
+  padding: 6rem 0;
+
+  background: ${({ theme }) => theme.colors.backgroundLight};
+  color: white;
+
+  .inner {
+    color: white;
+    max-width: ${smallDesktop}px;
+    width: 100%;
+    margin: 3rem auto;
+
+    @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+      padding-top: 5rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+      max-width: ${desktop}px;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+      max-width: ${desktopFHD}px;
+    }
+
+    .swiper-container {
+      width: 100%;
+      position: relative;
+      height: 34rem;
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+          color: white;
+          height: 30rem;
+
+          .img-container {
+            height: 100%;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .swiper-pagination-bullet {
+        height: 0.4rem;
+        width: 0.4rem;
+        background: #fff;
+        margin-right: -200%;
+
+        &.swiper-pagination-bullet-active {
+          background: #fff;
+        }
+      }
+    }
+  }
+`
+
 const Home = () => {
   return (
     <Main>
@@ -236,6 +312,48 @@ const Home = () => {
           </div>
         </div>
       </Motto>
+      <OurWork>
+        <div className="inner">
+          <h1>Our Work</h1>
+          <div className="swiper-container">
+            <Swiper
+              pagination={{
+                clickable: true,
+              }}
+              direction="vertical"
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'}
+              coverflowEffect={{
+                rotate: 0,
+                stretch: 450,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              modules={[EffectCoverflow, Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="img-container">
+                  <Image src={Slide1} alt="EVOLVE" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="img-container">
+                  <Image src={Slide2} alt="Shawarma" />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="img-container">
+                  <Image src={Slide3} alt="Cold Press" />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </OurWork>
     </Main>
   )
 }
