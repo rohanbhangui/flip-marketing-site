@@ -9,7 +9,7 @@ import GreenCircleGrid from '@/assets/img/light-green-circle-grid.svg'
 import MottoImage from '@/assets/img/motto-image.png'
 import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
 import Button from '@/components/Button'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 import { EffectCoverflow, Pagination } from 'swiper'
 
 import Slide1 from '@/assets/img/slide-1.png'
@@ -21,6 +21,7 @@ import 'swiper/swiper.min.css'
 import 'swiper/css/effect-creative'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
+import { useEffect } from 'react'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -200,7 +201,7 @@ const Motto = styled.section`
   }
 `
 
-const OurWork = styled.section`
+const OurWork = styled.section<{ slideHeight: number }>`
   margin-top: 4rem;
   padding: 6rem 0;
 
@@ -228,7 +229,7 @@ const OurWork = styled.section`
     .swiper-container {
       width: 100%;
       position: relative;
-      height: 34rem;
+      height: ${({ slideHeight }) => `${slideHeight / 16 + 4}rem`};
 
       .swiper {
         width: 100%;
@@ -236,7 +237,7 @@ const OurWork = styled.section`
 
         .swiper-slide {
           color: white;
-          height: 30rem;
+          height: ${({ slideHeight }) => `${slideHeight / 16}rem`};
 
           .img-container {
             height: 100%;
@@ -263,6 +264,8 @@ const OurWork = styled.section`
     }
   }
 `
+
+const slideHeight = 480
 
 const Home = () => {
   return (
@@ -312,7 +315,7 @@ const Home = () => {
           </div>
         </div>
       </Motto>
-      <OurWork>
+      <OurWork slideHeight={slideHeight}>
         <div className="inner">
           <h1>Our Work</h1>
           <div className="swiper-container">
@@ -327,7 +330,7 @@ const Home = () => {
               slidesPerView={'auto'}
               coverflowEffect={{
                 rotate: 0,
-                stretch: 450,
+                stretch: slideHeight - 30,
                 depth: 100,
                 modifier: 1,
                 slideShadows: true,
