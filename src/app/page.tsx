@@ -15,6 +15,7 @@ import BlueDoor from '@/assets/img/our-work-door.svg'
 import RedRainbow from '@/assets/img/our-work-rainbow.svg'
 import OrangeDirection from '@/assets/img/video-orange-direction.svg'
 import GreenArc from '@/assets/img/video-green-arc.svg'
+import GreenStar from '@/assets/img/interuption-green-start.svg'
 
 import {
   desktop,
