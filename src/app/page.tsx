@@ -256,7 +256,7 @@ const OurWork = styled.section`
     padding: 0 1rem;
 
     .header {
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -265,6 +265,7 @@ const OurWork = styled.section`
       position: relative;
 
       h1 {
+        margin-bottom: 1rem;
       }
     }
 
