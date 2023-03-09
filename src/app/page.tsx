@@ -3,13 +3,19 @@
 import _Header from '@/components/Header'
 import Image from 'next/image'
 import styled from 'styled-components'
+
+import InterruptionCollab from '@/assets/img/interruption-collab.png'
+import VideoReel from '@/assets/img/video-reel.png'
+import MottoImage from '@/assets/img/motto-image.png'
+
 import Flip from '@/assets/img/hero-flip.svg'
 import Curl from '@/assets/img/hero-curl.svg'
 import GreenCircleGrid from '@/assets/img/light-green-circle-grid.svg'
 import BlueDoor from '@/assets/img/our-work-door.svg'
 import RedRainbow from '@/assets/img/our-work-rainbow.svg'
-import MottoImage from '@/assets/img/motto-image.png'
-import InterruptionCollab from '@/assets/img/interruption-collab.png'
+import OrangeDirection from '@/assets/img/video-orange-direction.svg'
+import GreenArc from '@/assets/img/video-green-arc.svg'
+
 import {
   desktop,
   desktopFHD,
@@ -36,10 +42,26 @@ import { useEffect, useState } from 'react'
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
   min-height: 100vh;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    height: 130vh;
+    background-image: radial-gradient(
+      hsla(209, 100%, 47%, 0.3) 5%,
+      transparent 0
+    );
+    z-index: 0;
+    background-size: 1.5rem 1.5rem;
+  }
 `
 
 const Header = styled(_Header)`
   padding-top: 1rem;
+  position: relative;
+  z-index: 1;
 
   @media ${({ theme }) => theme.mediaQuery.smallTablet} {
     padding-top: 3rem;
@@ -47,76 +69,82 @@ const Header = styled(_Header)`
 `
 
 const Hero = styled.section`
-  color: white;
-  max-width: ${smallDesktop}px;
-  width: 100%;
-  margin: 3rem auto;
-
-  @media ${({ theme }) => theme.mediaQuery.smallTablet} {
-    padding-top: 5rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
-    max-width: ${desktop}px;
-  }
-
-  @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
-    max-width: ${desktopFHD}px;
-  }
-
-  .title {
-    text-align: center;
-    font-family: ${({ theme }) => theme.fonts.secondary};
+  position: relative;
+  z-index: 1;
+  .inner {
+    color: white;
+    max-width: ${smallDesktop}px;
     width: 100%;
-    text-align: center;
-    padding: 0 1rem;
-    font-size: min(10vw, 40rem);
+    margin: 3rem auto 0;
+    padding-bottom: 3rem;
 
-    @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
-      font-size: 7.5rem;
+    @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+      padding-top: 5rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+      max-width: ${desktop}px;
     }
 
     @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
-      font-size: 12rem;
+      max-width: ${desktopFHD}px;
     }
 
-    > * {
+    .title {
+      text-align: center;
       font-family: ${({ theme }) => theme.fonts.secondary};
-      vertical-align: middle;
-    }
+      width: 100%;
+      text-align: center;
+      padding: 0 1rem;
+      font-size: min(10vw, 40rem);
 
-    .img-container {
-      display: inline-block;
-      height: min(8vw, 15rem);
-
-      @media ${({ theme }) => theme.mediaQuery.smallPhone} {
-        height: min(7vw, 12rem);
+      @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+        font-size: 7.5rem;
       }
 
-      img {
-        height: 100%;
-        width: auto;
+      @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+        font-size: 12rem;
+      }
+
+      > * {
+        font-family: ${({ theme }) => theme.fonts.secondary};
+        vertical-align: middle;
+      }
+
+      .img-container {
+        display: inline-block;
+        height: min(8vw, 15rem);
+
+        @media ${({ theme }) => theme.mediaQuery.smallPhone} {
+          height: min(7vw, 12rem);
+        }
+
+        img {
+          height: 100%;
+          width: auto;
+        }
       }
     }
-  }
 
-  .action-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
 
-    a {
-      margin: 0.5rem;
+      a {
+        margin: 0.5rem;
+      }
     }
   }
 `
 
 const Motto = styled.section`
   position: relative;
+  z-index: 1;
   padding: 6rem 1rem 2rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -214,6 +242,7 @@ const Motto = styled.section`
 const OurWork = styled.section<{ slideHeight: number }>`
   margin-top: 4rem;
   padding: 6rem 0;
+  overflow: hidden;
 
   background: ${({ theme }) => theme.colors.backgroundLight};
   color: white;
@@ -315,7 +344,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
       border-radius: 100rem;
       position: absolute;
       right: 15%;
-      bottom: 7%;
+      bottom: 13%;
       transform: translateX(50%) translateY(50%);
       z-index: 1;
 
@@ -323,6 +352,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
         height: 6rem;
         width: 6rem;
         font-size: 1.5rem;
+        bottom: 7%;
       }
     }
 
@@ -391,6 +421,10 @@ const Interruption = styled.section`
       grid-column: 1 / 13;
       padding: 0 1rem;
 
+      @media ${({ theme }) => theme.mediaQuery.phone} {
+        grid-column: 1 / 10;
+      }
+
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
         grid-column: 1 / 7;
       }
@@ -443,8 +477,7 @@ const Interruption = styled.section`
 `
 
 const Video = styled.section`
-  padding-top: 6rem;
-  padding-bottom: 5rem;
+  padding: 6rem 1rem 5rem;
   background: ${({ theme }) => theme.colors.backgroundLight};
 
   .inner {
@@ -452,12 +485,16 @@ const Video = styled.section`
     max-width: ${smallDesktop}px;
     width: 100%;
     margin: 0 auto 3rem;
-    display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 1rem;
 
     h1 {
       margin-bottom: 3rem;
+      width: 80%;
+
+      @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        max-width: ${smallTablet}px;
+      }
     }
 
     @media ${({ theme }) => theme.mediaQuery.smallTablet} {
@@ -470,6 +507,74 @@ const Video = styled.section`
 
     @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
       max-width: ${desktopFHD}px;
+    }
+
+    .img-container {
+      aspect-ratio: 16/9;
+      position: relative;
+
+      .fa-circle-play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        z-index: 4;
+        font-size: 3rem;
+        color: ${({ theme }) => theme.colors.yellow};
+
+        @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+          font-size: 4.5rem;
+        }
+
+        @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+          font-size: 7rem;
+        }
+      }
+
+      .adlib {
+        position: absolute;
+
+        &.orange-triangle {
+          z-index: 4;
+          right: 10%;
+          top: 3%;
+          transform: translateX(50%) translateY(-50%);
+          width: 4rem;
+          height: auto;
+
+          @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+            width: 5rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+            width: 7rem;
+          }
+        }
+
+        &.green-arc {
+          transform: translateX(-50%) translateY(50%);
+          bottom: 0;
+          z-index: 0;
+          width: 9rem;
+          height: auto;
+
+          @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+            width: 15rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+            width: 20rem;
+          }
+        }
+      }
+
+      .video-reel {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 3;
+      }
     }
   }
 `
@@ -516,29 +621,31 @@ const Home = () => {
     <Main>
       <Header />
       <Hero>
-        <div className="title">
-          Flip{' '}
-          <div className="img-container">
-            <Image src={Flip} alt="" />{' '}
-          </div>{' '}
-          the tide of{' '}
-          <div className="img-container">
-            <Image src={Curl} alt="" />{' '}
-          </div>{' '}
-          average marketing
-        </div>
-        <div className="action-buttons">
-          <Button
-            href="#"
-            type="secondary"
-            label={
-              <>
-                <i className="fa-sharp fa-solid fa-play" />
-                Check us out
-              </>
-            }
-          />
-          <Button href="#" type="secondary-alt" label="Our Services" />
+        <div className="inner">
+          <div className="title">
+            Flip{' '}
+            <div className="img-container">
+              <Image src={Flip} alt="" />{' '}
+            </div>{' '}
+            the tide of{' '}
+            <div className="img-container">
+              <Image src={Curl} alt="" />{' '}
+            </div>{' '}
+            average marketing
+          </div>
+          <div className="action-buttons">
+            <Button
+              href="#"
+              type="secondary"
+              label={
+                <>
+                  <i className="fa-sharp fa-solid fa-play" />
+                  Check us out
+                </>
+              }
+            />
+            <Button href="#" type="secondary-alt" label="Our Services" />
+          </div>
         </div>
       </Hero>
       <Motto>
@@ -600,10 +707,10 @@ const Home = () => {
             <i className="fa-sharp fa-solid fa-arrow-up-right" />
           </Link>
           <div className="adlib blue-door">
-            <Image src={BlueDoor} alt="blue door decoration" />
+            <Image src={BlueDoor} alt="blue door shape decoration" />
           </div>
           <div className="adlib red-rainbow">
-            <Image src={RedRainbow} alt="blue door decoration" />
+            <Image src={RedRainbow} alt="red rainbow shape decoration" />
           </div>
         </div>
       </OurWork>
@@ -629,8 +736,19 @@ const Home = () => {
       </Interruption>
       <Video>
         <div className="inner">
+          <h1>Work based on experience</h1>
           <div className="img-container">
-            <Image src="" alt="video reel" />
+            <i className="fa-sharp fa-solid fa-circle-play" />
+            <Image className="video-reel" src={VideoReel} alt="video reel" />
+            <div className="adlib orange-triangle">
+              <Image
+                src={OrangeDirection}
+                alt="orange triangle in a row decorations"
+              />
+            </div>
+            <div className="adlib green-arc">
+              <Image src={GreenArc} alt="green arc decoration" />
+            </div>
           </div>
         </div>
       </Video>

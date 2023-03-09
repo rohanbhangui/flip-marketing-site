@@ -10,7 +10,7 @@ const Typography = css`
     margin-bottom: 0.5rem;
 
     @media ${({ theme }) => theme.mediaQuery.tablet} {
-      font-size: 4.3rem;
+      font-size: 5rem;
     }
   }
 
