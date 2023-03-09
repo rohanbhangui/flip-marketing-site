@@ -4,6 +4,7 @@ import Logo from '@/assets/img/logo.svg'
 import Button from '../Button'
 import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
 import { useState } from 'react'
+import Link from 'next/link'
 
 const Container = styled.header`
   display: flex;
@@ -150,9 +151,11 @@ const Header = (props: HeaderType) => {
   return (
     <Container className={className}>
       <div className="left">
-        <div className="img-container">
-          <Image src={Logo} alt="F L I P" />
-        </div>
+        <Link href="/">
+          <div className="img-container">
+            <Image src={Logo} alt="F L I P" />
+          </div>
+        </Link>
         <nav>
           <ul>
             <li>
