@@ -173,7 +173,7 @@ const Container = styled.header`
 
     li {
       list-style: none;
-      transform: translateY(1.5rem);
+      transform: translateY(-0.5rem);
       opacity: 0;
 
       &.link-5 {
