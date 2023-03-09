@@ -322,7 +322,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
           height: 0.4rem;
           width: 0.4rem;
           background: #fff;
-          transition: 0.1s ease-in-out;
+          transition: 0.25s ease-in-out;
           display: inline-block;
           border-radius: 5rem;
 
