@@ -14,8 +14,6 @@ import Stairs from '@/assets/img/services-pink-stairs.svg'
 import ServicesBackground from '@/assets/img/services-background.jpg'
 import WhatMatters from '@/assets/img/services-what-matters.png'
 
-import Button from '@/components/Button'
-
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
   min-height: 100vh;
