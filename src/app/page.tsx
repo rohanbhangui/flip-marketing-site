@@ -240,7 +240,7 @@ const Motto = styled.section`
   }
 `
 
-const OurWork = styled.section<{ slideHeight: number }>`
+const OurWork = styled.section`
   margin-top: 4rem;
   padding: 6rem 0;
   overflow: hidden;
@@ -283,19 +283,27 @@ const OurWork = styled.section<{ slideHeight: number }>`
 
     .swiper-container {
       width: 100%;
-      position: relative;
-      height: ${({ slideHeight }) => `${slideHeight / 16 + 4}rem`};
 
       .swiper {
-        width: 100%;
-        height: 100%;
-
         .swiper-slide {
           color: white;
-          height: ${({ slideHeight }) => `${slideHeight / 16}rem`};
+          height: 19.625rem;
+
+          @media ${({ theme }) => theme.mediaQuery.phone} {
+            height: 24rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+            height: 34rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+            height: 41.5rem;
+          }
 
           .img-container {
             height: 100%;
+            position: relative;
 
             img {
               height: 100%;
@@ -306,6 +314,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
 
           .content {
             position: absolute;
+            z-index: 5;
             left: 2rem;
             bottom: 2rem;
           }
@@ -316,7 +325,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
         text-align: left;
         margin-left: 2rem;
         position: relative;
-        margin-top: -3rem;
+        margin-top: 1rem;
 
         .swiper-pagination-bullet {
           height: 0.4rem;
@@ -345,7 +354,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
       border-radius: 100rem;
       position: absolute;
       right: 15%;
-      bottom: 13%;
+      bottom: 9%;
       transform: translateX(50%) translateY(50%);
       z-index: 1;
 
@@ -353,7 +362,7 @@ const OurWork = styled.section<{ slideHeight: number }>`
         height: 6rem;
         width: 6rem;
         font-size: 1.5rem;
-        bottom: 7%;
+        bottom: 5%;
       }
     }
 
@@ -580,16 +589,6 @@ const Video = styled.section`
   }
 `
 
-const ourWorkCarouselSlideHeight = (width: number): number => {
-  if (width !== 0) {
-    if (width >= smallDesktop) return 600
-    if (width >= smallTablet) return 480
-    if (width >= phone) return 320
-  }
-
-  return 250
-}
-
 const OUR_WORK = [
   {
     img: Slide1,
@@ -609,15 +608,6 @@ const OUR_WORK = [
 ]
 
 const Home = () => {
-  const { width } = useWindowDimensions()
-  const [slideHeight, setSlideHeight] = useState(
-    ourWorkCarouselSlideHeight(width)
-  )
-
-  useEffect(() => {
-    setSlideHeight(ourWorkCarouselSlideHeight(width))
-  }, [width])
-
   return (
     <Main>
       <Header />
@@ -667,7 +657,7 @@ const Home = () => {
           </div>
         </div>
       </Motto>
-      <OurWork slideHeight={slideHeight}>
+      <OurWork>
         <div className="inner">
           <div className="header">
             <h1>Our Work</h1>
