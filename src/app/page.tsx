@@ -243,8 +243,12 @@ const Motto = styled.section`
 
 const OurWork = styled.section`
   margin-top: 4rem;
-  padding: 6rem 0;
+  padding: 6rem 0 1rem;
   overflow: hidden;
+
+  @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+    padding: 6rem 0;
+  }
 
   background: ${({ theme }) => theme.colors.backgroundLight};
   color: white;
@@ -310,6 +314,7 @@ const OurWork = styled.section`
               height: 100%;
               width: 100%;
               object-fit: cover;
+              filter: brightness(90%);
             }
           }
 
@@ -318,6 +323,7 @@ const OurWork = styled.section`
             z-index: 5;
             left: 2rem;
             bottom: 2rem;
+            text-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.25);
           }
         }
       }
@@ -399,9 +405,15 @@ const OurWork = styled.section`
 `
 
 const Interruption = styled.section`
-  margin-top: 4rem;
+  margin-top: 1rem;
   padding-top: 2.5rem;
   padding-bottom: 5rem;
+
+  @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+  }
 
   .inner {
     color: white;
@@ -431,6 +443,7 @@ const Interruption = styled.section`
     .content {
       grid-column: 1 / 13;
       padding: 0 1rem;
+      order: 2;
 
       @media ${({ theme }) => theme.mediaQuery.phone} {
         grid-column: 1 / 10;
@@ -438,6 +451,7 @@ const Interruption = styled.section`
 
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
         grid-column: 1 / 7;
+        order: 1;
       }
 
       p {
@@ -464,12 +478,15 @@ const Interruption = styled.section`
 
     .img-container {
       grid-column: 1 / 13;
-      justify-self: flex-end;
+      justify-self: flex-start;
+      margin-bottom: 3rem;
+      order: 1;
 
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
         grid-column: 8 / 13;
         margin-top: 20%;
         justify-self: flex-start;
+        order: 2;
       }
 
       img {
@@ -488,8 +505,12 @@ const Interruption = styled.section`
 `
 
 const Video = styled.section`
-  padding: 6rem 1rem 5rem;
+  padding: 6rem 1rem 2rem;
   background: ${({ theme }) => theme.colors.backgroundLight};
+
+  @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+    padding: 6rem 1rem 5rem;
+  }
 
   .inner {
     color: white;

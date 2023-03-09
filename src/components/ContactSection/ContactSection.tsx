@@ -85,7 +85,11 @@ const Container = styled.section`
         }
 
         i {
-          font-size: 4rem;
+          font-size: 2.5rem;
+
+          @media ${({ theme }) => theme.mediaQuery.tablet} {
+            font-size: 4rem;
+          }
         }
 
         .text {
