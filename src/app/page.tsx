@@ -58,8 +58,6 @@ const Main = styled.main`
 
 const Header = styled(_Header)`
   padding-top: 1rem;
-  position: relative;
-  z-index: 1;
 
   @media ${({ theme }) => theme.mediaQuery.smallTablet} {
     padding-top: 3rem;
