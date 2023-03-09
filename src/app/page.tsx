@@ -15,12 +15,10 @@ import BlueDoor from '@/assets/img/our-work-door.svg'
 import RedRainbow from '@/assets/img/our-work-rainbow.svg'
 import OrangeDirection from '@/assets/img/video-orange-direction.svg'
 import GreenArc from '@/assets/img/video-green-arc.svg'
-import GreenStar from '@/assets/img/interuption-green-start.svg'
 
 import {
   desktop,
   desktopFHD,
-  phone,
   smallDesktop,
   smallTablet,
 } from '@/assets/styles/themeConfig'
@@ -37,8 +35,6 @@ import 'swiper/swiper.min.css'
 import 'swiper/css/effect-creative'
 import 'swiper/css/pagination'
 import Link from 'next/link'
-import { useWindowDimensions } from '@/utils/hooks'
-import { useEffect, useState } from 'react'
 import ContactSection from '@/components/ContactSection'
 
 const Main = styled.main`

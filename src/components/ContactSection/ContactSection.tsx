@@ -1,6 +1,5 @@
 import {
   smallDesktop,
-  smallTablet,
   desktop,
   desktopFHD,
   phone,
