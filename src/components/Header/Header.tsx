@@ -15,7 +15,7 @@ const Container = styled.header`
   width: 100%;
 
   @media ${({ theme }) => theme.mediaQuery.smallTablet} {
-    padding-top: 3rem 1rem 1rem;
+    padding: 3rem 1rem 1rem;
   }
 
   @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
@@ -205,6 +205,25 @@ type HeaderType = {
   className?: string
 }
 
+const LINKS = [
+  {
+    url: '/services',
+    label: 'Services',
+  },
+  {
+    url: '#',
+    label: 'Work',
+  },
+  {
+    url: '#',
+    label: 'About',
+  },
+  {
+    url: '#',
+    label: 'Contact',
+  },
+]
+
 const Header = (props: HeaderType) => {
   const { className } = props
   const [isMobileOpen, setIsMobileOpen] = useState(false)
@@ -219,18 +238,11 @@ const Header = (props: HeaderType) => {
         </Link>
         <nav>
           <ul>
-            <li>
-              <Button href="#" type="link" label="Services" />
-            </li>
-            <li>
-              <Button href="#" type="link" label="Work" />
-            </li>
-            <li>
-              <Button href="#" type="link" label="About" />
-            </li>
-            <li>
-              <Button href="#" type="link" label="Contact" />
-            </li>
+            {LINKS.map((route) => (
+              <li key={route.label}>
+                <Button href={route.url} type="link" label={route.label} />
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
@@ -261,8 +273,13 @@ const Header = (props: HeaderType) => {
         </div>
         <nav>
           <ul>
+            {LINKS.map((route, index) => (
+              <li key={route.label} className={`link-${index + 1}`}>
+                <Button href={route.url} type="link" label={route.label} />
+              </li>
+            ))}
             <li className="link-1">
-              <Button href="#" type="link" label="Services" />
+              <Button href="/services" type="link" label="Services" />
             </li>
             <li className="link-2">
               <Button href="#" type="link" label="Work" />
