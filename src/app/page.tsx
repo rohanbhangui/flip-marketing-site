@@ -6,11 +6,20 @@ import styled from 'styled-components'
 import Flip from '@/assets/img/hero-flip.svg'
 import Curl from '@/assets/img/hero-curl.svg'
 import GreenCircleGrid from '@/assets/img/light-green-circle-grid.svg'
+import BlueDoor from '@/assets/img/our-work-door.svg'
+import RedRainbow from '@/assets/img/our-work-rainbow.svg'
 import MottoImage from '@/assets/img/motto-image.png'
-import { desktop, desktopFHD, smallDesktop } from '@/assets/styles/themeConfig'
+import InterruptionCollab from '@/assets/img/interruption-collab.png'
+import {
+  desktop,
+  desktopFHD,
+  phone,
+  smallDesktop,
+  smallTablet,
+} from '@/assets/styles/themeConfig'
 import Button from '@/components/Button'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-import { EffectCoverflow, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCreative, Pagination } from 'swiper'
 
 import Slide1 from '@/assets/img/slide-1.png'
 import Slide2 from '@/assets/img/slide-2.png'
@@ -19,9 +28,10 @@ import Slide3 from '@/assets/img/slide-3.png'
 // Import Swiper styles
 import 'swiper/swiper.min.css'
 import 'swiper/css/effect-creative'
-import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
-import { useEffect } from 'react'
+import Link from 'next/link'
+import { useWindowDimensions } from '@/utils/hooks'
+import { useEffect, useState } from 'react'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -212,7 +222,22 @@ const OurWork = styled.section<{ slideHeight: number }>`
     color: white;
     max-width: ${smallDesktop}px;
     width: 100%;
-    margin: 3rem auto;
+    margin: 0 auto 3rem;
+    position: relative;
+    padding: 0 1rem;
+
+    .header {
+      margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+      position: relative;
+
+      h1 {
+      }
+    }
 
     @media ${({ theme }) => theme.mediaQuery.smallTablet} {
       padding-top: 5rem;
@@ -248,26 +273,245 @@ const OurWork = styled.section<{ slideHeight: number }>`
               object-fit: cover;
             }
           }
+
+          .content {
+            position: absolute;
+            left: 2rem;
+            bottom: 2rem;
+          }
         }
       }
 
-      .swiper-pagination-bullet {
-        height: 0.4rem;
-        width: 0.4rem;
-        background: #fff;
-        margin-right: -200%;
+      .swiper-pagination {
+        text-align: left;
+        margin-left: 2rem;
+        position: relative;
+        margin-top: -3rem;
 
-        &.swiper-pagination-bullet-active {
+        .swiper-pagination-bullet {
+          height: 0.4rem;
+          width: 0.4rem;
           background: #fff;
+          transition: 0.1s ease-in-out;
+          display: inline-block;
+          border-radius: 5rem;
+
+          &.swiper-pagination-bullet-active {
+            background: #fff;
+            width: 1.3rem;
+          }
+        }
+      }
+    }
+
+    .round-button {
+      width: 4rem;
+      height: 4rem;
+      background: ${({ theme }) => theme.colors.yellow};
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100rem;
+      position: absolute;
+      right: 15%;
+      bottom: 7%;
+      transform: translateX(50%) translateY(50%);
+      z-index: 1;
+
+      @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        height: 6rem;
+        width: 6rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .adlib {
+      position: absolute;
+      transform: translateX(-50%) translateY(-50%);
+
+      &.blue-door {
+        left: 70%;
+        top: 40%;
+        width: 12rem;
+        height: auto;
+
+        @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+          width: 20rem;
+          height: auto;
+        }
+
+        @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+          width: 30rem;
+          height: auto;
+        }
+      }
+
+      &.red-rainbow {
+        top: 60%;
+        left: 0%;
+        width: 15rem;
+        height: auto;
+      }
+    }
+  }
+`
+
+const Interruption = styled.section`
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+
+  .inner {
+    color: white;
+    max-width: ${smallDesktop}px;
+    width: 100%;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+
+    h1 {
+      margin-bottom: 3rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+      padding-top: 5rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+      max-width: ${desktop}px;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+      max-width: ${desktopFHD}px;
+    }
+
+    .content {
+      grid-column: 1 / 13;
+      padding: 0 1rem;
+
+      @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        grid-column: 1 / 7;
+      }
+
+      p {
+        font-family: ${({ theme }) => theme.fonts.primary};
+        font-weight: 500;
+        line-height: 1.5;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+
+        @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+          font-size: 1.5rem;
+        }
+
+        @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+          font-size: 2.1rem;
+          margin-bottom: 2.5rem;
+        }
+
+        &.secondary {
+          color: rgba(255, 255, 255, 0.33);
+        }
+      }
+    }
+
+    .img-container {
+      grid-column: 1 / 13;
+      justify-self: flex-end;
+
+      @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        grid-column: 8 / 13;
+        margin-top: 20%;
+        justify-self: flex-start;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        max-width: 320px;
+        padding: 0 1rem;
+
+        @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+          max-width: none;
         }
       }
     }
   }
 `
 
-const slideHeight = 480
+const Video = styled.section`
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+  background: ${({ theme }) => theme.colors.backgroundLight};
+
+  .inner {
+    color: white;
+    max-width: ${smallDesktop}px;
+    width: 100%;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+
+    h1 {
+      margin-bottom: 3rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+      padding-top: 5rem;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+      max-width: ${desktop}px;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+      max-width: ${desktopFHD}px;
+    }
+  }
+`
+
+const ourWorkCarouselSlideHeight = (width: number): number => {
+  if (width !== 0) {
+    if (width >= smallDesktop) return 600
+    if (width >= smallTablet) return 480
+    if (width >= phone) return 320
+  }
+
+  return 250
+}
+
+const OUR_WORK = [
+  {
+    img: Slide1,
+    alt: 'Evolve',
+    title: 'Evolve AOC',
+  },
+  {
+    img: Slide2,
+    alt: 'Shawarma',
+    title: 'Shawarma',
+  },
+  {
+    img: Slide3,
+    alt: 'Cold Press',
+    title: 'Cold Press',
+  },
+]
 
 const Home = () => {
+  const { width } = useWindowDimensions()
+  const [slideHeight, setSlideHeight] = useState(
+    ourWorkCarouselSlideHeight(width)
+  )
+
+  useEffect(() => {
+    setSlideHeight(ourWorkCarouselSlideHeight(width))
+  }, [width])
+
   return (
     <Main>
       <Header />
@@ -317,46 +561,79 @@ const Home = () => {
       </Motto>
       <OurWork slideHeight={slideHeight}>
         <div className="inner">
-          <h1>Our Work</h1>
+          <div className="header">
+            <h1>Our Work</h1>
+            <Button href="#" type="secondary-alt" label="See All Work" />
+          </div>
           <div className="swiper-container">
             <Swiper
               pagination={{
                 clickable: true,
               }}
-              direction="vertical"
-              effect={'coverflow'}
               grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={'auto'}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: slideHeight - 30,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+              effect={'creative'}
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  translate: ['-20%', 0, -1],
+                },
+                next: {
+                  translate: ['100%', 0, 0],
+                },
               }}
-              modules={[EffectCoverflow, Pagination]}
+              modules={[EffectCreative, Pagination]}
               className="mySwiper"
             >
-              <SwiperSlide>
-                <div className="img-container">
-                  <Image src={Slide1} alt="EVOLVE" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="img-container">
-                  <Image src={Slide2} alt="Shawarma" />
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="img-container">
-                  <Image src={Slide3} alt="Cold Press" />
-                </div>
-              </SwiperSlide>
+              {OUR_WORK.map((work) => (
+                <SwiperSlide key={work.title}>
+                  <div className="content">
+                    <h2>{work.title}</h2>
+                  </div>
+                  <div className="img-container">
+                    <Image src={work.img} alt={work.alt} />
+                  </div>
+                </SwiperSlide>
+              ))}
             </Swiper>
+          </div>
+          <Link href={'#'} className="round-button">
+            <i className="fa-sharp fa-solid fa-arrow-up-right" />
+          </Link>
+          <div className="adlib blue-door">
+            <Image src={BlueDoor} alt="blue door decoration" />
+          </div>
+          <div className="adlib red-rainbow">
+            <Image src={RedRainbow} alt="blue door decoration" />
           </div>
         </div>
       </OurWork>
+      <Interruption>
+        <div className="inner">
+          <div className="content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
+            </p>
+            <p className="secondary">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur.
+            </p>
+            <Button href="#" type="secondary-alt" label="See How We Work" />
+          </div>
+          <div className="img-container">
+            <Image src={InterruptionCollab} alt="people collaborating" />
+          </div>
+        </div>
+      </Interruption>
+      <Video>
+        <div className="inner">
+          <div className="img-container">
+            <Image src="" alt="video reel" />
+          </div>
+        </div>
+      </Video>
     </Main>
   )
 }
