@@ -6,7 +6,7 @@ const Typography = css`
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 400;
     font-size: max(2.3rem, 5vw);
-    line-height: 1.3;
+    line-height: 1.1;
     margin-bottom: 0.5rem;
 
     @media ${({ theme }) => theme.mediaQuery.tablet} {

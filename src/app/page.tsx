@@ -39,6 +39,7 @@ import 'swiper/css/pagination'
 import Link from 'next/link'
 import { useWindowDimensions } from '@/utils/hooks'
 import { useEffect, useState } from 'react'
+import ContactSection from '@/components/ContactSection'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -743,6 +744,7 @@ const Home = () => {
           </div>
         </div>
       </Video>
+      <ContactSection />
     </Main>
   )
 }
