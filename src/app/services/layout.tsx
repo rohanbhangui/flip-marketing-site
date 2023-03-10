@@ -38,7 +38,8 @@ const Hero = styled.section`
     }
 
     @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
-      padding-bottom: 5rem;
+      margin-bottom: 0;
+      padding-bottom: 25vh;
     }
 
     @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
@@ -102,7 +103,7 @@ const Hero = styled.section`
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(90%);
+      opacity: 0.75;
     }
   }
 `
