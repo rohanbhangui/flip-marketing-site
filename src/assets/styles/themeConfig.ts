@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components'
+
 // eslint-disable-next-line no-unused-vars
 const smallPhone = 480 // XS
 // Small devices (landscape phones, 576px and down)
@@ -51,7 +53,9 @@ const theme = {
   },
 }
 
-export type ThemeType = typeof theme
+export type ThemeType = DefaultTheme & typeof theme
+
+// export type ThemeType = typeof theme
 
 export {
   smallPhone,
