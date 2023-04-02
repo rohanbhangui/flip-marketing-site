@@ -219,7 +219,7 @@ const LINKS = [
     label: 'About',
   },
   {
-    url: '#',
+    url: '/contact',
     label: 'Contact',
   },
 ]
@@ -247,7 +247,7 @@ const Header = (props: HeaderType) => {
         </nav>
       </div>
       <div className="right">
-        <Button className="reach-out" href="#" label="React out to us" />
+        <Button className="reach-out" href="/contact" label="React out to us" />
         <div className="mobile-icon">
           <i
             onClick={() => setIsMobileOpen((prev) => !prev)}
@@ -279,7 +279,11 @@ const Header = (props: HeaderType) => {
               </li>
             ))}
             <li className="link-5">
-              <Button className="reach-out" href="#" label="React out to us" />
+              <Button
+                className="reach-out"
+                href="/contact"
+                label="React out to us"
+              />
             </li>
           </ul>
         </nav>

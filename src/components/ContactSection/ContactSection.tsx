@@ -51,59 +51,59 @@ const Container = styled.section`
         font-size: 1.3rem;
       }
     }
+  }
+`
 
-    .methods {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
+export const Methods = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    width: 100%;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.33);
+    display: inline-block;
+    padding: 1rem;
+    transition: 0.25s ease-in-out;
+    position: relative;
+    bottom: 0;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      bottom: 0.5rem;
+
+      .text {
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+
+    i {
+      font-size: 2.5rem;
 
       @media ${({ theme }) => theme.mediaQuery.tablet} {
-        width: 100%;
+        font-size: 4rem;
       }
+    }
 
-      a {
-        color: rgba(255, 255, 255, 0.33);
-        display: inline-block;
-        padding: 1rem;
-        transition: 0.25s ease-in-out;
-        position: relative;
-        bottom: 0;
-
-        &:hover {
-          color: rgba(255, 255, 255, 1);
-          bottom: 0.5rem;
-
-          .text {
-            pointer-events: auto;
-            opacity: 1;
-          }
-        }
-
-        i {
-          font-size: 2.5rem;
-
-          @media ${({ theme }) => theme.mediaQuery.tablet} {
-            font-size: 4rem;
-          }
-        }
-
-        .text {
-          opacity: 0;
-          pointer-events: none;
-          transition: 0.25s ease-in-out;
-          position: absolute;
-          bottom: -1rem;
-          text-align: center;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
+    .text {
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.25s ease-in-out;
+      position: absolute;
+      bottom: -1rem;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 `
 
-const CONTACT_METHODS = [
+export const CONTACT_METHODS = [
   {
     name: 'Twitter',
     handle: '@flipmarketing',
@@ -141,14 +141,14 @@ const ContactSection = () => {
             us!
           </p>
         </div>
-        <div className="methods">
+        <Methods>
           {CONTACT_METHODS.map((social) => (
             <Link key={social.name} href={social.link}>
               {social.icon}
               <div className="text">{social.name}</div>
             </Link>
           ))}
-        </div>
+        </Methods>
       </div>
     </Container>
   )
