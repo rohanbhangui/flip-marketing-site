@@ -211,7 +211,7 @@ const LINKS = [
     label: 'Services',
   },
   {
-    url: '#',
+    url: '/work',
     label: 'Work',
   },
   {
@@ -233,7 +233,7 @@ const Header = (props: HeaderType) => {
       <div className="left">
         <Link href="/">
           <div className="img-container">
-            <Image src={Logo} alt="F L I P" />
+            <Image src={Logo} alt="F L i P" />
           </div>
         </Link>
         <nav>
@@ -260,7 +260,7 @@ const Header = (props: HeaderType) => {
       <div className={`mobile-menu ${isMobileOpen ? 'active' : ''}`}>
         <div className="top-bar">
           <div className="img-container">
-            <Image src={Logo} alt="F L I P" />
+            <Image src={Logo} alt="F L i P" />
           </div>
           <div className="mobile-icon">
             <i
@@ -278,18 +278,6 @@ const Header = (props: HeaderType) => {
                 <Button href={route.url} type="link" label={route.label} />
               </li>
             ))}
-            <li className="link-1">
-              <Button href="/services" type="link" label="Services" />
-            </li>
-            <li className="link-2">
-              <Button href="#" type="link" label="Work" />
-            </li>
-            <li className="link-3">
-              <Button href="#" type="link" label="About" />
-            </li>
-            <li className="link-4">
-              <Button href="#" type="link" label="Contact" />
-            </li>
             <li className="link-5">
               <Button className="reach-out" href="#" label="React out to us" />
             </li>

@@ -533,12 +533,12 @@ const Layout = () => {
       <Header />
       <Hero>
         <div className="inner">
-          <div className="title">
+          <h1 className="title">
             <span className="highlight">Flip</span> your brand to the top{' '}
             <div className="img-container">
               <Image src={Stairs} alt="pink stairs decoration" />
             </div>
-          </div>
+          </h1>
         </div>
         <div className="background-image">
           <Image src={ServicesBackground} alt="services background" />
