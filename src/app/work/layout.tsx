@@ -72,9 +72,13 @@ const Hero = styled.section`
         font-size: 12rem;
       }
 
-      > * {
+      > *:not(i) {
         font-family: ${({ theme }) => theme.fonts.secondary};
         vertical-align: middle;
+      }
+
+      i {
+        color: ${({ theme }) => theme.colors.blue};
       }
 
       .img-container {
@@ -258,7 +262,9 @@ const Layout = () => {
       <Header />
       <Hero>
         <div className="inner">
-          <h1 className="title">Our Work</h1>
+          <h1 className="title">
+            <i className="fa-regular fa-chart-network" /> Our Work
+          </h1>
           <p className="large secondary">
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
             nisi ut aliquip ex ea commodo consequat.
