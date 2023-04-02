@@ -656,7 +656,7 @@ const Home = () => {
           </div>
           <div className="action-buttons">
             <Button
-              href="#"
+              href="/work"
               type="secondary"
               label={
                 <>
@@ -665,7 +665,11 @@ const Home = () => {
                 </>
               }
             />
-            <Button href="#" type="secondary-alt" label="Our Services" />
+            <Button
+              href="/services"
+              type="secondary-alt"
+              label="Our Services"
+            />
           </div>
         </div>
       </Hero>
@@ -724,7 +728,7 @@ const Home = () => {
               ))}
             </Swiper>
           </div>
-          <Link href={'#'} className="round-button">
+          <Link href="/services" className="round-button">
             <i className="fa-sharp fa-solid fa-arrow-up-right" />
           </Link>
           <div className="adlib blue-door">
