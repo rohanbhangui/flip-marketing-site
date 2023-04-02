@@ -227,6 +227,7 @@ const Services = styled.section`
 
             @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
               max-width: none;
+              max-width: ${phone}px;
             }
 
             &.yellowOrange {
@@ -279,6 +280,10 @@ const Services = styled.section`
               @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
                 width: 8rem;
               }
+
+              @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+                left: 27%;
+              }
             }
 
             &.blue-asterisk {
@@ -297,6 +302,10 @@ const Services = styled.section`
 
               @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
                 width: 8rem;
+              }
+
+              @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+                left: 18%;
               }
             }
           }
@@ -473,8 +482,14 @@ const Details = styled.section`
 
         &.content {
           grid-column: 1 / 13;
+
           @media ${({ theme }) => theme.mediaQuery.smallTablet} {
             grid-column: 4 / 13;
+            justify-self: flex-end;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+            grid-column: 7 / 13;
             justify-self: flex-end;
           }
         }
@@ -520,6 +535,7 @@ const Details = styled.section`
 
           @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
             width: 40rem;
+            top: 75%;
           }
         }
       }

@@ -2,7 +2,7 @@
 
 import _Header from '@/components/Header'
 import Image from 'next/image'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 import InterruptionCollab from '@/assets/img/interruption-collab.png'
 import VideoReel from '@/assets/img/video-reel.png'
@@ -21,6 +21,7 @@ import {
   desktopFHD,
   smallDesktop,
   smallTablet,
+  ThemeType,
 } from '@/assets/styles/themeConfig'
 import Button from '@/components/Button'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -36,6 +37,7 @@ import 'swiper/css/effect-creative'
 import 'swiper/css/pagination'
 import Link from 'next/link'
 import ContactSection from '@/components/ContactSection'
+import { useMediaQuery } from '@/utils/hooks'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -299,6 +301,14 @@ const OurWork = styled.section`
 
           @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
             height: 41.5rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+            height: 48rem;
+          }
+
+          @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
+            height: 56rem;
           }
 
           .img-container {
@@ -625,6 +635,9 @@ const OUR_WORK = [
 ]
 
 const Home = () => {
+  const theme = useTheme() as ThemeType
+  const isLargeDesktop = useMediaQuery(`${theme.mediaQuery.desktopFHD}`)
+
   return (
     <Main>
       <Header />
@@ -668,9 +681,9 @@ const Home = () => {
         </div>
         <div className="content">
           <div className="inner">
-            <h3>Analyze Data</h3>
-            <h3>Unlock Potential</h3>
-            <h3>Increase Presence</h3>
+            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Analyze Data</h3>
+            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Unlock Potential</h3>
+            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Increase Presence</h3>
           </div>
         </div>
       </Motto>

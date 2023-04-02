@@ -215,7 +215,7 @@ const LINKS = [
     label: 'Work',
   },
   {
-    url: '#',
+    url: '/about',
     label: 'About',
   },
   {

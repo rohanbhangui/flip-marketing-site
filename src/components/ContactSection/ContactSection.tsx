@@ -32,19 +32,19 @@ const Container = styled.section`
     }
 
     @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
-      max-width: ${desktop}px;
     }
 
     @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
-      max-width: ${desktopFHD}px;
     }
 
     .content {
       margin-bottom: 3rem;
       width: 80%;
+      margin: 0 auto 3rem;
 
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
         max-width: ${phone}px;
+        margin: 0 0 3rem;
       }
 
       h1 {

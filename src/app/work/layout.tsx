@@ -4,14 +4,10 @@ import {
   smallDesktop,
   desktop,
   desktopFHD,
-  smallPhone,
-  smallTablet,
   tablet,
-  phone,
 } from '@/assets/styles/themeConfig'
 import Header from '@/components/Header'
 import styled from 'styled-components'
-import Image from 'next/image'
 import ContactSection from '@/components/ContactSection'
 
 import DoniasDonarImg from '@/assets/img/donias-donair.png'
