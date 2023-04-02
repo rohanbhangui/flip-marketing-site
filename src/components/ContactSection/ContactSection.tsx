@@ -41,10 +41,12 @@ const Container = styled.section`
       margin-bottom: 3rem;
       width: 80%;
       margin: 0 auto 3rem;
+      text-align: center;
 
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        text-align: left;
         max-width: ${phone}px;
-        margin: 0 0 3rem;
+        margin: 0 auto 3rem;
       }
 
       h1 {
