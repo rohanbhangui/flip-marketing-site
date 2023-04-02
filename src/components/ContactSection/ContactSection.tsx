@@ -1,9 +1,4 @@
-import {
-  smallDesktop,
-  desktop,
-  desktopFHD,
-  phone,
-} from '@/assets/styles/themeConfig'
+import { smallDesktop, phone } from '@/assets/styles/themeConfig'
 import Link from 'next/link'
 import styled from 'styled-components'
 
