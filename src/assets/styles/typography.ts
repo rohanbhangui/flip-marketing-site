@@ -75,6 +75,32 @@ const Typography = css`
       font-size: 1rem;
       line-height: 1.6;
     }
+
+    &.large {
+      font-family: ${({ theme }) => theme.fonts.primary};
+      font-weight: 500;
+      line-height: 1.3;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: white;
+
+      @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+        font-size: 1.5rem;
+      }
+
+      @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
+        font-size: 2.1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      &.secondary {
+        color: rgba(255, 255, 255, 0.24);
+      }
+
+      &.secondary-alt {
+        color: rgba(255, 255, 255, 0.33);
+      }
+    }
   }
 
   a {
