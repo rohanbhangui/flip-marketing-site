@@ -268,7 +268,7 @@ const Layout = () => {
       <WorkTiles>
         <div className="inner">
           {WORK.map((item) => (
-            <Tile key={item.key} background={item.img.src}>
+            <Tile key={item.key} background={item.img.src} id={item.key}>
               <div className="tile">
                 <div className="content">
                   <div className="wrapper">

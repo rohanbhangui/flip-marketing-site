@@ -75,6 +75,7 @@ const Hero = styled.section`
 
       @media ${({ theme }) => theme.mediaQuery.desktopFHD} {
         font-size: 12rem;
+        max-width: 90rem;
       }
 
       .highlight {

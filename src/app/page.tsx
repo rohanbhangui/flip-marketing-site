@@ -38,6 +38,7 @@ import 'swiper/css/pagination'
 import Link from 'next/link'
 import ContactSection from '@/components/ContactSection'
 import { useMediaQuery } from '@/utils/hooks'
+import { useState } from 'react'
 
 const Main = styled.main`
   background: ${({ theme }) => theme.colors.background};
@@ -621,22 +622,27 @@ const OUR_WORK = [
     img: Slide1,
     alt: 'Evolve',
     title: 'Evolve AOC',
+    link: '/work#evolve-aoc',
   },
   {
     img: Slide2,
-    alt: 'Shawarma',
-    title: 'Shawarma',
+    alt: "Donia's Donair",
+    title: "Donia's Donair",
+    link: '/work#donias-donair',
   },
   {
     img: Slide3,
-    alt: 'Cold Press',
-    title: 'Cold Press',
+    alt: 'Green Press',
+    title: 'Green Press',
+    link: '/work#green-press',
   },
 ]
 
 const Home = () => {
   const theme = useTheme() as ThemeType
   const isLargeDesktop = useMediaQuery(`${theme.mediaQuery.desktopFHD}`)
+
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
     <Main>
@@ -695,13 +701,15 @@ const Home = () => {
         <div className="inner">
           <div className="header">
             <h1>Our Work</h1>
-            <Button href="#" type="secondary-alt" label="See All Work" />
+            <Button href="/work" type="secondary-alt" label="See All Work" />
           </div>
           <div className="swiper-container">
             <Swiper
               pagination={{
                 clickable: true,
               }}
+              onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+              onSwiper={(swiper) => setCurrentSlide(swiper.activeIndex)}
               grabCursor={true}
               effect={'creative'}
               creativeEffect={{
@@ -728,7 +736,7 @@ const Home = () => {
               ))}
             </Swiper>
           </div>
-          <Link href="/services" className="round-button">
+          <Link href={OUR_WORK[currentSlide].link} className="round-button">
             <i className="fa-sharp fa-solid fa-arrow-up-right" />
           </Link>
           <div className="adlib blue-door">
@@ -752,7 +760,11 @@ const Home = () => {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </p>
-            <Button href="#" type="secondary-alt" label="See How We Work" />
+            <Button
+              href="/services"
+              type="secondary-alt"
+              label="See How We Work"
+            />
           </div>
           <div className="img-container">
             <Image src={InterruptionCollab} alt="people collaborating" />
