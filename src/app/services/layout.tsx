@@ -565,12 +565,15 @@ const Layout = () => {
           <div className="offset-grid">
             <div className="grid-item">
               <div className="content">
-                <h3>Understanding what matters.</h3>
+                <h3>Understanding your customers from the metrics up.</h3>
                 <p>
-                  Understanding your business is crucial to developing effective
-                  marketing strategies that drive results. By honing in on what
-                  makes your business unique, we can create marketing messages
-                  that differentiate your brand and attract the right customers.
+                  Analyzing a business&apos;s data can provide valuable insights
+                  into performance and help identify areas of focus. With the
+                  right tools and expertise, businesses can make data-driven
+                  decisions to increase efficiency, productivity, and revenue.
+                  By partnering with Flip, we can offer customized solutions
+                  that cater to your specific needs and help you unlock the full
+                  potential of your data.
                 </p>
               </div>
               <div className="img">
@@ -588,12 +591,13 @@ const Layout = () => {
             </div>
             <div className="grid-item">
               <div className="content">
-                <h3>Understanding what matters.</h3>
+                <h3>Charting a course to success.</h3>
                 <p>
-                  Understanding your business is crucial to developing effective
-                  marketing strategies that drive results. By honing in on what
-                  makes your business unique, we can create marketing messages
-                  that differentiate your brand and attract the right customers.
+                  Flip builds a customized market strategy for your business
+                  based around our analysis of your data. Our team can work
+                  closely with your business to create a personalized plan that
+                  maximizes your marketing efforts and distinguishes you from
+                  the competition.
                 </p>
               </div>
               <div className="img">
@@ -624,14 +628,13 @@ const Layout = () => {
           </div>
           <div className="content">
             <p className="large">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
+              Creating content that engages your idea customer.
             </p>
             <p className="large secondary">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              At Flip understand the importance of connecting with your
+              customers on a deeper level and telling stories that resonate with
+              them. That is why we use a human-centric approach to marketing
+              that focuses on building authentic connections with your audience.
             </p>
           </div>
         </div>
@@ -654,10 +657,10 @@ const Layout = () => {
             <div className="grid-item content">
               <p className="large">Getting into the nitty-gritty.</p>
               <p className="large secondary">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
+                At Flip, we have a diverse network of professionals who help you
+                build your brand for long-term success. From engaging content to
+                influencer partnerships, our team delivers real results that
+                resonate with your audience and stand out in your industry.
               </p>
             </div>
           </div>

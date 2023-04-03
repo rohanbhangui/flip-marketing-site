@@ -90,6 +90,10 @@ const Hero = styled.section`
 
       i {
         color: ${({ theme }) => theme.colors.green};
+
+        @media ${({ theme }) => theme.mediaQuery.smallTablet} {
+          margin-left: 1rem;
+        }
       }
 
       .img-container {
@@ -150,8 +154,8 @@ const Layout = () => {
             Always happy to Chat! <i className="fa-solid fa-messages" />
           </h1>
           <p className="large secondary">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+            Flip is always looking to work on new and exciting opportunities!
+            Drop us a note below!
           </p>
           <Methods>
             {CONTACT_METHODS.map((social) => (

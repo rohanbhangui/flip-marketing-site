@@ -185,12 +185,18 @@ const Motto = styled.section`
 
     @media ${({ theme }) => theme.mediaQuery.smallTablet} {
       grid-column: 1/8;
-      aspect-ratio: 3/1.8;
+      aspect-ratio: 3/2;
       border-radius: 0 2.5rem 2.5rem 0;
     }
 
     @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
       border-radius: 0 5rem 5rem 0;
+      aspect-ratio: 3/2.3;
+    }
+
+    @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
+      border-radius: 0 5rem 5rem 0;
+      aspect-ratio: 3/1.8;
     }
 
     img {
@@ -223,7 +229,7 @@ const Motto = styled.section`
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
-      padding: 15% 4rem;
+      padding: 2rem;
       height: 100%;
 
       @media ${({ theme }) => theme.mediaQuery.smallTablet} {
@@ -242,6 +248,8 @@ const OurWork = styled.section`
   margin-top: 4rem;
   padding: 6rem 0 1rem;
   overflow: hidden;
+  position: relative;
+  z-index: 100;
 
   @media ${({ theme }) => theme.mediaQuery.smallTablet} {
     padding: 6rem 0;
@@ -619,10 +627,10 @@ const Video = styled.section`
 
 const OUR_WORK = [
   {
-    img: Slide1,
-    alt: 'Evolve',
-    title: 'Evolve AOC',
-    link: '/work#evolve-aoc',
+    img: Slide3,
+    alt: 'Green Press',
+    title: 'Green Press',
+    link: '/work#green-press',
   },
   {
     img: Slide2,
@@ -631,10 +639,10 @@ const OUR_WORK = [
     link: '/work#donias-donair',
   },
   {
-    img: Slide3,
-    alt: 'Green Press',
-    title: 'Green Press',
-    link: '/work#green-press',
+    img: Slide1,
+    alt: 'Evolve',
+    title: 'Evolve AOC',
+    link: '/work#evolve-aoc',
   },
 ]
 
@@ -662,7 +670,7 @@ const Home = () => {
           </div>
           <div className="action-buttons">
             <Button
-              href="/work"
+              href="/services"
               type="secondary"
               label={
                 <>
@@ -671,11 +679,7 @@ const Home = () => {
                 </>
               }
             />
-            <Button
-              href="/services"
-              type="secondary-alt"
-              label="Our Services"
-            />
+            <Button href="/work" type="secondary-alt" label="Our Work" />
           </div>
         </div>
       </Hero>
@@ -691,9 +695,9 @@ const Home = () => {
         </div>
         <div className="content">
           <div className="inner">
-            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Analyze Data</h3>
-            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Unlock Potential</h3>
-            <h3 className={isLargeDesktop ? 'h1' : 'h3'}>Increase Presence</h3>
+            <h3 className={isLargeDesktop ? 'h2' : 'h3'}>Analyze Data</h3>
+            <h3 className={isLargeDesktop ? 'h2' : 'h3'}>Unlock Potential</h3>
+            <h3 className={isLargeDesktop ? 'h2' : 'h3'}>Power your Growth</h3>
           </div>
         </div>
       </Motto>
@@ -751,14 +755,14 @@ const Home = () => {
         <div className="inner">
           <div className="content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor.
+              At Flip, we believe that every business is as unique as the
+              products they make.
             </p>
             <p className="secondary">
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              We take a comprehensive approach to analyzing your data,
+              understanding your audience, and developing a strategy that is
+              customized to your business. This helps you to sstand out, connect with
+              your customers, and achieve your marketing objectives.
             </p>
             <Button
               href="/services"

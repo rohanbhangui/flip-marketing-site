@@ -40,7 +40,7 @@ const Hero = styled.section`
 
     @media ${({ theme }) => theme.mediaQuery.smallDesktop} {
       margin-bottom: 0;
-      padding-bottom: 25vh;
+      padding-bottom: 15vh;
     }
 
     @media ${({ theme }) => theme.mediaQuery.largeDesktop} {
@@ -266,8 +266,10 @@ const Layout = () => {
             <i className="fa-regular fa-chart-network" /> Our Work
           </h1>
           <p className="large secondary">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+            We have achieved success across a wide range of industries,
+            including F&B, clothing, real estate, and many more. Our expertise
+            and experience translate to effective marketing strategies, no
+            matter the industry.
           </p>
         </div>
       </Hero>

@@ -381,14 +381,15 @@ const Layout = () => {
             <div className="grid-item second">
               <div className="content">
                 <p className="large">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor.
+                  From Dubai to Toronto, Flip brings a global perspective to
+                  your marketing strategy.
                 </p>
                 <p className="large secondary">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
+                  Flip&apos;s founder, Zaid Khatib, is a seasoned entrepreneur
+                  with a wealth of experience in both Dubai and Toronto. His
+                  unique perspective on global business and local market
+                  dynamics drives our innovative and strategic approach to
+                  marketing.
                 </p>
               </div>
               <div className="img-container">
