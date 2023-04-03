@@ -11,7 +11,7 @@ import styled from 'styled-components'
 import ContactSection from '@/components/ContactSection'
 
 import DoniasDonarImg from '@/assets/img/donias-donair.png'
-import EvolveAOCImg from '@/assets/img/evolve-aoc.png'
+import EvolveAOCImg from '@/assets/img/slide-1.jpeg'
 import GreenPressImg from '@/assets/img/green-press.png'
 import Button from '@/components/Button'
 

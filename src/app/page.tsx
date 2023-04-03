@@ -27,8 +27,8 @@ import Button from '@/components/Button'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCreative, Pagination } from 'swiper'
 
-import Slide1 from '@/assets/img/slide-1.png'
-import Slide2 from '@/assets/img/slide-2.png'
+import Slide1 from '@/assets/img/slide-1.jpeg'
+import Slide2 from '@/assets/img/donias-donair.png'
 import Slide3 from '@/assets/img/slide-3.png'
 
 // Import Swiper styles
@@ -761,8 +761,8 @@ const Home = () => {
             <p className="secondary">
               We take a comprehensive approach to analyzing your data,
               understanding your audience, and developing a strategy that is
-              customized to your business. This helps you to sstand out, connect with
-              your customers, and achieve your marketing objectives.
+              customized to your business. This helps you to sstand out, connect
+              with your customers, and achieve your marketing objectives.
             </p>
             <Button
               href="/services"
