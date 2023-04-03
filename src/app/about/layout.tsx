@@ -8,8 +8,8 @@ import Image from 'next/image'
 import ContactSection from '@/components/ContactSection'
 
 import AboutBackground from '@/assets/img/about-1.png'
-import About2 from '@/assets/img/about-2.png'
-import About3 from '@/assets/img/about-3.png'
+import About2 from '@/assets/img/about-2.jpg'
+import About3 from '@/assets/img/about-3.jpg'
 
 import YellowSquare from '@/assets/img/about-yellow-square.svg'
 import RedSquare from '@/assets/img/about-red-square-tilt.svg'
