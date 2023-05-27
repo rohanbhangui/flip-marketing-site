@@ -23,8 +23,8 @@ import Stories from '@/assets/img/stories-image.png'
 import WhatMatters from '@/assets/img/IMG_2082-evolve.jpeg'
 import ChartingCourse from '@/assets/img/278392327_1004535447120901_2560200747656825138_n.jpeg'
 import CreatingContentTellingStories from '@/assets/img/creating-content-telling-stories.svg'
-import DetailsMain from '@/assets/img/details-main.png'
-import DetailsSide from '@/assets/img/details-side.png'
+import DetailsMain from '@/assets/img/IMG_0272.png'
+import DetailsSide from '@/assets/img/IMG_0377.jpeg'
 import ContactSection from '@/components/ContactSection'
 
 const Main = styled.main`
