@@ -235,7 +235,6 @@ const WORK = [
     title: 'Green Press',
     description:
       'Green Press is a healthy organic juice bar in the heart of Oakville with multiple locations in the Greater Toronto Area.  During the peak of the 2020 Covid-19 Pandemic we had to think fast as the stores where losing money fast. We developed multiple marketing strategies through different avenues but not limited to social media, In person, Email and much more',
-    link: 'https://google.com',
     img: GreenPressImg,
   },
   {
@@ -243,7 +242,6 @@ const WORK = [
     title: "Donia's Donair",
     description:
       'Understanding your business is crucial to developing effective marketing strategies that drive results. By honing in on what makes your business unique, we can create marketing messages that differentiate your brand and attract the right customers.',
-    link: 'https://google.com',
     img: DoniasDonarImg,
   },
   {

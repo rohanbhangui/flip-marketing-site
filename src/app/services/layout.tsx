@@ -20,7 +20,8 @@ import YellowSquare from '@/assets/img/services-yellow-square.svg'
 import BlueCircle from '@/assets/img/services-blue-circle.svg'
 import ServicesBackground from '@/assets/img/services-background.jpg'
 import Stories from '@/assets/img/stories-image.png'
-import WhatMatters from '@/assets/img/services-what-matters.png'
+import WhatMatters from '@/assets/img/IMG_2082-evolve.jpeg'
+import ChartingCourse from '@/assets/img/278392327_1004535447120901_2560200747656825138_n.jpeg'
 import CreatingContentTellingStories from '@/assets/img/creating-content-telling-stories.svg'
 import DetailsMain from '@/assets/img/details-main.png'
 import DetailsSide from '@/assets/img/details-side.png'
@@ -197,6 +198,8 @@ const Services = styled.section`
             @media ${({ theme }) => theme.mediaQuery.smallTablet} {
               font-size: 1.25rem;
             }
+
+            color: rgba(255, 255, 255, 0.33);
           }
         }
 
@@ -608,7 +611,7 @@ const Layout = () => {
                 />
                 <Image
                   className="content-img yellow"
-                  src={WhatMatters}
+                  src={ChartingCourse}
                   alt="people collaborating"
                 />
               </div>

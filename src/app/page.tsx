@@ -30,6 +30,8 @@ import { EffectCreative, Pagination } from 'swiper'
 import Slide1 from '@/assets/img/slide-1.jpeg'
 import Slide2 from '@/assets/img/donias-donair.png'
 import Slide3 from '@/assets/img/slide-3.png'
+import Slide4 from '@/assets/img/Sunday-Citizen_Snug-Waffle-Comforter_Cloud-Grey_LS2.webp'
+import Slide5 from '@/assets/img/1663712674854.webp'
 
 // Import Swiper styles
 import 'swiper/swiper.min.css'
@@ -633,10 +635,22 @@ const OUR_WORK = [
     link: '/work#green-press',
   },
   {
+    img: Slide5,
+    alt: 'Monos',
+    title: 'Monos',
+    link: '/work#monos',
+  },
+  {
     img: Slide2,
     alt: "Donia's Donair",
     title: "Donia's Donair",
     link: '/work#donias-donair',
+  },
+  {
+    img: Slide4,
+    alt: 'Sunday Citizen',
+    title: 'Sunday Citizen',
+    link: '/work#sunday-citizen',
   },
   {
     img: Slide1,
@@ -716,6 +730,9 @@ const Home = () => {
               onSwiper={(swiper) => setCurrentSlide(swiper.activeIndex)}
               grabCursor={true}
               effect={'creative'}
+              autoplay={{
+                delay: 3000,
+              }}
               creativeEffect={{
                 prev: {
                   shadow: true,
