@@ -15,7 +15,7 @@ import EvolveAOCImg from '@/assets/img/slide-1.jpeg'
 import GreenPressImg from '@/assets/img/green-press.png'
 import MonosImg from '@/assets/img/1663712674854.webp'
 import SundayCitizenImg from '@/assets/img/Sunday-Citizen_Snug-Waffle-Comforter_Cloud-Grey_LS2.webp'
-import PacasImg from '@/assets/img/D-Crew.webp'
+import PacasImg from '@/assets/img/mothersday.webp'
 import CrepProtectImg from '@/assets/img/325976358_766367324821061_4246269227189538331_n.jpg'
 import PrincessPollyImg from '@/assets/img/Princess-Polly-QA.webp'
 import Button from '@/components/Button'
@@ -122,6 +122,7 @@ const Hero = styled.section`
       height: 100%;
       object-fit: cover;
       opacity: 0.75;
+      object-position: center;
     }
   }
 `
