@@ -13,6 +13,11 @@ import ContactSection from '@/components/ContactSection'
 import DoniasDonarImg from '@/assets/img/donias-donair.png'
 import EvolveAOCImg from '@/assets/img/slide-1.jpeg'
 import GreenPressImg from '@/assets/img/green-press.png'
+import MonosImg from '@/assets/img/1663712674854.webp'
+import SundayCitizenImg from '@/assets/img/Sunday-Citizen_Snug-Waffle-Comforter_Cloud-Grey_LS2.webp'
+import PacasImg from '@/assets/img/D-Crew.webp'
+import CrepProtectImg from '@/assets/img/325976358_766367324821061_4246269227189538331_n.jpg'
+import PrincessPollyImg from '@/assets/img/Princess-Polly-QA.webp'
 import Button from '@/components/Button'
 
 const Main = styled.main`
@@ -207,6 +212,10 @@ const Tile = styled.div<{ background: string }>`
       }
     }
 
+    .desktop-desc {
+      max-width: 30rem;
+    }
+
     @media ${({ theme }) => theme.mediaQuery.smallTablet} {
       padding: 5rem;
     }
@@ -234,8 +243,22 @@ const WORK = [
     key: 'green-press',
     title: 'Green Press',
     description:
-      'Green Press is a healthy organic juice bar in the heart of Oakville with multiple locations in the Greater Toronto Area.  During the peak of the 2020 Covid-19 Pandemic we had to think fast as the stores where losing money fast. We developed multiple marketing strategies through different avenues but not limited to social media, In person, Email and much more',
+      'Green Press is a healthy organic juice bar in the heart of Oakville with multiple locations in the Greater Toronto Area. During the peak of the 2020 Covid-19 Pandemic we had to think fast as the stores where losing money fast. We developed multiple marketing strategies through different avenues but not limited to social media, In person, Email and much more',
     img: GreenPressImg,
+  },
+  {
+    key: 'monos',
+    title: 'Monos',
+    description:
+      "Monos is a Canadian travel and lifestyle brand offering timeless, premium goods for the mindful traveller. With a successful Black Friday sale and a unique Mother's Day promotion featuring greetings in over 8 languages, the team helped Monos connect more meaningfully with their diverse customer base and effectively drive sales.",
+    img: MonosImg,
+  },
+  {
+    key: 'sunday-citizen',
+    title: 'Sunday Citizen',
+    description:
+      "Sunday Citizen produces radically soft, durable, and easy-care home goods that aren't just comfortable; they create comfort. We assisted with their gift card sale promotions and product showcases. Through a unique approach that intertwined posts about 'love languages' with product features, the agency ensured a more impactful brand narrative, successfully engaging customers and driving sales.",
+    img: SundayCitizenImg,
   },
   {
     key: 'donias-donair',
@@ -243,6 +266,27 @@ const WORK = [
     description:
       'Understanding your business is crucial to developing effective marketing strategies that drive results. By honing in on what makes your business unique, we can create marketing messages that differentiate your brand and attract the right customers.',
     img: DoniasDonarImg,
+  },
+  {
+    key: 'pacas',
+    title: 'Pacas',
+    description:
+      "Pacas is a manufacturer of alpaca wool socks and apparel. We understood Pacas' unique product offering, We aimed to emphasize the unmatched softness of their socks. We created inviting and friendly content for both social media and the Pacas website. This approach effectively conveyed the product's unique appeal, enticing customers with the softness and comfort that Pacas socks provide.",
+    img: PacasImg,
+  },
+  {
+    key: 'crep-protect',
+    title: 'CrepProtect',
+    description:
+      "CrepProtect make shoe protection and cleaning products. We ideated and executed captivating video content to promote the Tiffany Nike collaboration, cleverly integrating their shoe protection product. The creative approach not only showcased the collab, but also effectively highlighted the value of Crep Protect's offerings.",
+    img: CrepProtectImg,
+  },
+  {
+    key: 'princess-polly',
+    title: 'Princess Polly',
+    description:
+      'Princess Polly is an Australian online fashion retailer best known for its trendy clothing, accessories, and beauty products targeted primarily at young women. We worked to foster a deeper connection with their audience. The team orchestrated live streams and developed unique content about clothing care post-spills - a topic not commonly addressed by many big brands. This novel approach resulted in increased engagement, strengthening the bond between Princess Polly and their dedicated fanbase and customers.',
+    img: PrincessPollyImg,
   },
   {
     key: 'evolve-aoc',
@@ -279,7 +323,7 @@ const Layout = () => {
                 <div className="content">
                   <div className="wrapper">
                     <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <p className="desktop-desc">{item.description}</p>
                     {item.link ? (
                       <Button
                         href={item.link}
