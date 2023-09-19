@@ -282,7 +282,7 @@ const Header = (props: HeaderType) => {
               <Button
                 className="reach-out"
                 href="/contact"
-                label="React out to us"
+                label="Reach out to us"
               />
             </li>
           </ul>

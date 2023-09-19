@@ -18,6 +18,7 @@ import SundayCitizenImg from '@/assets/img/Sunday-Citizen_Snug-Waffle-Comforter_
 import PacasImg from '@/assets/img/mothersday.webp'
 import CrepProtectImg from '@/assets/img/325976358_766367324821061_4246269227189538331_n.jpg'
 import PrincessPollyImg from '@/assets/img/Princess-Polly-QA.webp'
+import PublicRecImg from '@/assets/img/public-rec-image-1.png'
 import Button from '@/components/Button'
 
 const Main = styled.main`
@@ -260,6 +261,13 @@ const WORK = [
     description:
       "Sunday Citizen produces radically soft, durable, and easy-care home goods that aren't just comfortable; they create comfort. We assisted with their gift card sale promotions and product showcases. Through a unique approach that intertwined posts about 'love languages' with product features, the agency ensured a more impactful brand narrative, successfully engaging customers and driving sales.",
     img: SundayCitizenImg,
+  },
+  {
+    key: 'public-rec',
+    title: 'Public Rec',
+    description:
+      'Public Rec redefines casual wear with a blend of comfort, style, and performance. We helped them built them a highly converting campaign for their new product drop.',
+    img: PublicRecImg,
   },
   {
     key: 'donias-donair',

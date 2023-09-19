@@ -7,8 +7,8 @@ import Image from 'next/image'
 
 import ContactSection from '@/components/ContactSection'
 
-import AboutBackground from '@/assets/img/about-1.png'
-import About2 from '@/assets/img/about-2.jpg'
+import AboutBackground from '@/assets/img/IMG_9967-1.png'
+import About2 from '@/assets/img/43DDE4CD-7927-4132-A24B-C49696D560DC_1.png'
 import About3 from '@/assets/img/about-3.jpg'
 
 import YellowSquare from '@/assets/img/about-yellow-square.svg'
@@ -100,6 +100,7 @@ const Hero = styled.section`
     aspect-ratio: 5/4;
     position: relative;
     z-index: 10;
+    filter: saturate(0) contrast(80%) brightness(85%);
 
     @media ${({ theme }) => theme.mediaQuery.smallTablet} {
       aspect-ratio: 16/9;

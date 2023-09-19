@@ -104,24 +104,24 @@ export const Methods = styled.div`
 `
 
 export const CONTACT_METHODS = [
-  {
-    name: 'Twitter',
-    handle: '@flipmarketing',
-    icon: <i className="fa-brands fa-twitter" />,
-    link: '#',
-  },
-  {
-    name: 'TikTok',
-    handle: '@flipmarketing',
-    icon: <i className="fa-brands fa-tiktok" />,
-    link: '#',
-  },
-  {
-    name: 'Instagram',
-    handle: '@flipmarketing',
-    icon: <i className="fa-brands fa-instagram" />,
-    link: '#',
-  },
+  // {
+  //   name: 'Twitter',
+  //   handle: '@flipmarketing',
+  //   icon: <i className="fa-brands fa-twitter" />,
+  //   link: '#',
+  // },
+  // {
+  //   name: 'TikTok',
+  //   handle: '@flipmarketing',
+  //   icon: <i className="fa-brands fa-tiktok" />,
+  //   link: '#',
+  // },
+  // {
+  //   name: 'Instagram',
+  //   handle: '@flipmarketing',
+  //   icon: <i className="fa-brands fa-instagram" />,
+  //   link: '#',
+  // },
   {
     name: 'Email',
     handle: 'hello@flipyourmarketing.ca',
